@@ -1,0 +1,30 @@
+plugins {
+    id 'idea'
+    id 'application'
+}
+
+group 'com.aokolnychyi'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+mainClassName = "com.aokolnychyi.mapreduce.MaxScoreDriver"
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    hadoopVersion = '2.5.1'
+    junitVersion = '4.11'
+    mrUnitVersion = '1.1.0'
+    commonsVersion = '3.4'
+}
+
+dependencies {
+    compile "org.apache.hadoop:hadoop-client:$hadoopVersion"
+    compile "org.apache.commons:commons-lang3:$commonsVersion"
+    testCompile "junit:junit:$junitVersion"
+    testCompile "org.apache.mrunit:mrunit:$mrUnitVersion:hadoop2"
+    testCompile "org.apache.hadoop:hadoop-minicluster:$hadoopVersion"
+}
