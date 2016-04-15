@@ -25,7 +25,7 @@ public class MaxScoreDriver extends Configured implements Tool {
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
 
         job.setMapperClass(MaxScoreMapper.class);
-//        job.setCombinerClass(MaxScoreReducer.class);
+        job.setCombinerClass(MaxScoreReducer.class);
         job.setReducerClass(MaxScoreReducer.class);
 
         job.setOutputKeyClass(Text.class);
